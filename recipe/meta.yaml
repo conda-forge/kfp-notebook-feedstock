@@ -1,5 +1,5 @@
 {% set name = "kfp-notebook" %}
-{% set version = "0.11.0" %}
+{% set version = "0.12.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 72d57cb3a32e3740f50fb0a5d5c36703a855510fd14b12b01c2273ab9c8b1d6d
+  sha256: a616cb98738dfb790f0a175a8fef70b04784d932a599c2d7849d911f2be8b566
 
 build:
   number: 0
@@ -46,7 +46,7 @@ about:
   doc_source_url: https://github.com/elyra-ai/kfp-notebook/tree/master/docs
   license: Apache-2.0
   license_file: LICENSE
-  summary: "KFP-Notebook is an operator that enable running notebooks as part of a Kubeflow Pipeline"
+  summary: KFP-Notebook is an operator that enable running notebooks as part of a Kubeflow Pipeline
   description: >
     KFP-Notebook is an operator that enable running notebooks as part of a Kubeflow Pipeline
 
