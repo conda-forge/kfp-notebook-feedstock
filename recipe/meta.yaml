@@ -1,5 +1,5 @@
 {% set name = "kfp-notebook" %}
-{% set version = "0.12.0" %}
+{% set version = "0.13.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a616cb98738dfb790f0a175a8fef70b04784d932a599c2d7849d911f2be8b566
+  sha256: 094b027dbf183c6e05e328c9f299930723abe0221acdded92d7a14ad709a1dbf
 
 build:
   number: 0
