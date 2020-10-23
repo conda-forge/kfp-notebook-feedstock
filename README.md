@@ -5,9 +5,13 @@ Home: https://github.com/elyra-ai/kfp-notebook
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/kfp-notebook-feedstock/blob/master/LICENSE.txt)
 
 Summary: KFP-Notebook is an operator that enable running notebooks as part of a Kubeflow Pipeline
+
+Development: https://github.com/elyra-ai/kfp-notebook
+
+Documentation: https://github.com/elyra-ai/kfp-notebook/blob/master/README.md
 
 KFP-Notebook is an operator that enable running notebooks as part of a Kubeflow Pipeline
 
