@@ -1,5 +1,5 @@
 {% set name = "kfp-notebook" %}
-{% set version = "0.23.0" %}
+{% set version = "0.24.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 82d6803df4fb7e17bcf1a4fa4271a435efba061f283b016df50df18b027ff245
+  sha256: 49af8659cd9ff0a41dfa4ca19cf09c31553004f166eb19378b6218aeb1f67c7e
 
 build:
   number: 0
@@ -29,7 +29,7 @@ requirements:
     - tox >=2.9.1
     - coverage >=4.5.1
     - twine >=1.10.0
-    - kfp >=1.3.0
+    - kfp >=1.4.0
 
 test:
   imports:
