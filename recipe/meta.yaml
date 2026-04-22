@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: fd2d23203c80c2ec96a56db0d3594276bfc739acffefa03791abe27f788561f5
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - click >=6.0
     - bumpversion >=0.5.3
     - wheel >=0.30.0
@@ -32,6 +32,8 @@ requirements:
     - kfp >=1.4.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - kfp_notebook
 
