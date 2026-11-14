@@ -16,35 +16,38 @@ build:
 
 requirements:
   host:
-    - python >=3.6
-    - setuptools
+    - python {{ python_min }}
+    - hatchling
     - pip
   run:
-    - python >=3.6
-    - click >=6.0
-    - bumpversion >=0.5.3
-    - wheel >=0.30.0
-    - watchdog >=0.8.3
-    - flake8 >=3.5.0,<3.9.0
-    - tox >=2.9.1
-    - coverage >=4.5.1
-    - twine >=1.10.0
-    - kfp >=1.4.0
+    - python >={{ python_min }}
+    - kfp >=1.6.3
+    # elyra/kfp/bootstrapper.py imports packaging at module level, but
+    # upstream does not declare it as a dependency
+    - packaging
 
 test:
   imports:
-    - kfp_notebook
+    - elyra.kfp.bootstrapper
+  commands:
+    - pip check
+  requires:
+    - pip
+    - python {{ python_min }}
 
 about:
-  home: https://github.com/elyra-ai/kfp-notebook
-  dev_url: https://github.com/elyra-ai/kfp-notebook
-  doc_url: https://github.com/elyra-ai/kfp-notebook/blob/master/README.md
-  doc_source_url: https://github.com/elyra-ai/kfp-notebook/tree/master/docs
+  home: https://github.com/elyra-ai/elyra
+  dev_url: https://github.com/elyra-ai/elyra
+  doc_url: https://elyra.readthedocs.io/en/latest
   license: Apache-2.0
+  # The sdist ships no license file; recipe/LICENSE is elyra-ai/elyra's LICENSE
   license_file: LICENSE
-  summary: KFP-Notebook is an operator that enable running notebooks as part of a Kubeflow Pipeline
+  summary: Elyra bootstrapper that runs notebooks and Python or R scripts as Kubeflow Pipelines tasks
   description: >
-    KFP-Notebook is an operator that enable running notebooks as part of a Kubeflow Pipeline
+    kfp-notebook provides elyra.kfp.bootstrapper, which Elyra uses to run
+    generic pipeline nodes (Jupyter notebooks and Python or R scripts) as
+    Kubeflow Pipelines tasks. Since 3.0.1 it is published from elyra-ai/elyra;
+    earlier releases came from the archived elyra-ai/kfp-notebook project.
 
 extra:
   recipe-maintainers:
